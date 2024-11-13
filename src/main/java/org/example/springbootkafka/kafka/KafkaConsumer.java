@@ -8,13 +8,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class KafkaConsumer {
-
     private static final Logger LOGGER = LoggerFactory.getLogger(KafkaConsumer.class);
     @KafkaListener(topics="javaguides", groupId="myGroup") // whenever kafka producer sends a message ,
                                         // this consumer listens to this topic that is it has subscribed for it
     public void consume(String message){
         LOGGER.info(String.format("Message recieved -> %s",message));
-
 
     }
 
